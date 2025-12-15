@@ -1,0 +1,15 @@
+
+fastapi
+uvicorn[standard]
+google-adk
+python-jose[cryptography]
+bcrypt
+python-multipart
+pydantic
+pydantic-settings
+python-dotenv
+google-genai
+supabase
+motor
+pymongo[srv]
+certifi
