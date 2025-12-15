@@ -1,7 +1,7 @@
+from database import User, get_db
 from fastapi import APIRouter, Depends, HTTPException, status
 from supabase import Client
 
-from ..database import User, get_db
 from .dependencies import get_current_user
 from .models import Token, UserCreate, UserLogin, UserResponse
 from .utils import create_access_token, get_password_hash, verify_password

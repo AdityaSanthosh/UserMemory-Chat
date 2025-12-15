@@ -11,8 +11,8 @@ This module provides async tools that the agent can use to:
 from datetime import datetime, timezone
 from typing import Optional
 
-from ..context import get_current_user_id
-from ..database import get_facts_collection
+from context import get_current_user_id
+from database import get_facts_collection
 
 
 async def get_all_personal_info() -> dict[str, list[str]]:

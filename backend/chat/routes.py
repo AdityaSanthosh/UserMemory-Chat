@@ -1,8 +1,8 @@
+from auth.dependencies import get_current_user
+from database.models import User
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.responses import StreamingResponse
 
-from ..auth.dependencies import get_current_user
-from ..database.models import User
 from .models import ChatRequest, ConversationDetail, ConversationListItem
 from .service import chat_service
 

@@ -1,13 +1,12 @@
 import os
 from contextlib import asynccontextmanager
 
+from auth import router as auth_router
+from chat import router as chat_router
+from database import close_mongo, init_db, init_mongo
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
-from .auth import router as auth_router
-from .chat import router as chat_router
-from .database import close_mongo, init_db, init_mongo
 
 load_dotenv()
 
