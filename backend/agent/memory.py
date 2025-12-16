@@ -316,7 +316,7 @@ async def process_memory_update(user_message: str) -> str:
                     source_text=user_message,
                     source_timestamp=timestamp,
                 )
-                print(f"     ✅ {result}")
+                print(f"✅ {result}")
                 processed_count += 1
 
             except Exception as e:

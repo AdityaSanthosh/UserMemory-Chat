@@ -1,4 +1,4 @@
-# Gemini Chat Application
+# Dynamic Memory System
 
 A full-stack chat application built with FastAPI, Google ADK (Agent Development Kit), React, and DaisyUI.
 
