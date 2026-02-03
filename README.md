@@ -2,13 +2,19 @@
 
 A full-stack chat application built with FastAPI, Google ADK (Agent Development Kit), React, and DaisyUI.
 
+Remembers User persona across various conversations and builds a timeline of user activities. 
+This is achieved using context engineering techniques like entity extraction, llm as orchestrator & state resolver, tool calling
+
 ## Features
 
-- User authentication (JWT-based)
-- Real-time streaming chat responses via SSE
+- A ChatGPT style chat UI that has Real-time streaming chat responses via SSE
 - Conversation history with auto-generated titles
 - Responsive UI with sidebar navigation
 - **Supabase Integration** for persistent storage of users and chat sessions
+- **Mongodb Integration** for storing user's persona and activity timeline
+- JWT-based User authentication
+
+The moat of this project can be found at `https://github.com/AdityaSanthosh/UserMemory-Chat/blob/main/backend/agent/agent.py`
 
 ## Tech Stack
 
@@ -22,69 +28,6 @@ A full-stack chat application built with FastAPI, Google ADK (Agent Development 
 - **React Router** - Client-side routing
 - **DaisyUI 4** - Tailwind CSS component library
 - **Vite** - Build tool
-
-## Project Structure
-
-```
-├── backend/
-│   ├── __init__.py
-│   ├── main.py              # FastAPI app entry point
-│   ├── database/
-│   │   ├── __init__.py
-│   │   ├── db.py            # Supabase client initialization
-│   │   └── models.py        # User model class
-│   ├── auth/
-│   │   ├── __init__.py
-│   │   ├── routes.py        # Auth endpoints
-│   │   ├── models.py        # Pydantic schemas
-│   │   ├── utils.py         # Password hashing, JWT
-│   │   └── dependencies.py  # Auth dependencies
-│   ├── agent/
-│   │   ├── __init__.py
-│   │   └── agent.py         # Gemini agent configuration
-│   └── chat/
-│       ├── __init__.py
-│       ├── routes.py        # Chat endpoints
-│       ├── models.py        # Pydantic schemas
-│       ├── service.py       # Chat service with ADK
-│       └── supabase_session.py # ADK Session Service implementation
-├── frontend/
-│   ├── package.json
-│   ├── vite.config.js
-│   ├── tailwind.config.js
-│   ├── index.html
-│   └── src/
-│       ├── main.jsx
-│       ├── App.jsx
-│       ├── index.css
-│       ├── services/
-│       │   └── api.js
-│       ├── context/
-│       │   └── AuthContext.jsx
-│       ├── hooks/
-│       │   ├── useAuth.js
-│       │   └── useChat.js
-│       ├── components/
-│       │   ├── Avatar.jsx
-│       │   ├── Toast.jsx
-│       │   ├── TypingIndicator.jsx
-│       │   ├── ChatMessage.jsx
-│       │   ├── ChatInput.jsx
-│       │   ├── ChatArea.jsx
-│       │   ├── Sidebar.jsx
-│       │   ├── Navbar.jsx
-│       │   └── Layout.jsx
-│       ├── pages/
-│       │   ├── Login.jsx
-│       │   ├── Register.jsx
-│       │   └── Chat.jsx
-│       └── assets/
-│           ├── user-avatar.svg
-│           └── agent-avatar.svg
-├── requirements.txt
-├── .env.example
-└── README.md
-```
 
 ## Setup
 
